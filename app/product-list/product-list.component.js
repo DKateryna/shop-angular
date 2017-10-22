@@ -1,13 +1,7 @@
 angular.
-  module('myApp').
+  module('productList').
   component('productList', {
-    template:
-        '<ul>' +
-          '<li ng-repeat="product in $ctrl.products">' +
-            '<span>{{product.name}}</span>' +
-            '<p>{{product.price}}</p>' +
-          '</li>' +
-        '</ul>',
+    templateUrl: 'product-list/product-list.template.html',
     controller: function productList() {
       this.products = [
         {

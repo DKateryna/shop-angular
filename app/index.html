@@ -17,8 +17,8 @@
 </head>
 <body>
   <ul class="menu">
-    <li><a href="#!/view1">home</a></li>
-    <li><a href="#!/view2">shopping cart</a></li>
+    <li><a href="#!/products">Catalogue</a></li>
+    <li><a href="#!/view2">Shopping Cart</a></li>
   </ul>
 
   <!--[if lt IE 7]>
@@ -32,13 +32,13 @@
   -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
+  <script src="app.module.js"></script>
   <script src="view2/view2.js"></script>
+  <script src="product-list/product-list.module.js"></script>
+  <script src="product-list/product-list.component.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
-
-  <product-list></product-list>
+  <script src="app.js"></script>
 </body>
 </html>
