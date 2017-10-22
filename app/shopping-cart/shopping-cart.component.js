@@ -3,12 +3,12 @@
 angular.module('shoppingCart')
 .component('shoppingCart', {
   templateUrl: 'shopping-cart/shopping-cart.html',
-  controller: ['$routeParams', '$scope',
-    function ($routeParams, $scope) {
-      this.productId = $routeParams.productId;
-      // $scope.onClick = function (productId) {
-      //   window.location = "#!/shoppingCart/add/" + productId;
-      // };
+  controller: ['$routeParams', '$scope', 'State',
+    function ($routeParams, $scope, State) {
+      if ($routeParams.productId) {
+        State.cart.push(State.getProduct($routeParams.productId));
+      }
+      this.products = State.cart;
     }
   ]
 });

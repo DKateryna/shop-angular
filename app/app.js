@@ -8,23 +8,49 @@ angular.module('myApp', [
   'productDetail',
   'myApp.version'
 ]).
+factory('State', function() {
+  let products = [
+    {
+      name: 'Item 1',
+      price: 'Product price',
+      id: 'item_1'
+    }, {
+      name: 'Item 2',
+      price: 'Product price',
+      id: 'item_2'
+    }, {
+      name: 'Item 3',
+      price: 'Product price',
+      id: 'item_3'
+    }
+  ];
+  return {
+    cart: [],
+    getProduct: function(id) {
+      return products.find(product => id === product.id);
+    },
+    getProducts: function() {
+      return products;
+    }
+  };
+}).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
   $routeProvider
-  .when('/products', {
-    template: '<product-list></product-list>'
-  })
-  .when('/product/:productId', {
-    template: '<product-detail></product-detail>'
-  })
-  .when('/shoppingCart', {
-    template: '<shopping-cart></shopping-cart>'
-  })
-  .when('/shoppingCart/add/:productId', {
-    template: '<shopping-cart></shopping-cart>'
-  })
-  .otherwise({
-    redirectTo: '/products'
-  });
+    .when('/products', {
+      template: '<product-list></product-list>'
+    })
+    .when('/product/:productId', {
+      template: '<product-detail></product-detail>'
+    })
+    .when('/shoppingCart', {
+      template: '<shopping-cart></shopping-cart>'
+    })
+    .when('/shoppingCart/add/:productId', {
+      template: '<shopping-cart></shopping-cart>'
+    })
+    .otherwise({
+      redirectTo: '/products'
+    });
 }]);

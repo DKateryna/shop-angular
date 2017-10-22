@@ -1,1 +1,6 @@
-<p>This is the partial for shopping cart</p>
+<ul>
+  <li ng-repeat="product in $ctrl.products track by $index">
+    <h3><span>{{product.name}}</span></h3>
+    <p>{{product.price}}</p>
+  </li>
+</ul>
