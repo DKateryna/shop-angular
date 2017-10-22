@@ -4,7 +4,7 @@
 angular.module('myApp', [
   'ngRoute',
   'productList',
-  'myApp.view2',
+  'shoppingCart',
   'productDetail',
   'myApp.version'
 ]).
@@ -18,8 +18,11 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   .when('/product/:productId', {
     template: '<product-detail></product-detail>'
   })
-  .when('/view2', {
-    template: '<view2></view2>'
+  .when('/shoppingCart', {
+    template: '<shopping-cart></shopping-cart>'
+  })
+  .when('/shoppingCart/add/:productId', {
+    template: '<shopping-cart></shopping-cart>'
   })
   .otherwise({
     redirectTo: '/products'
