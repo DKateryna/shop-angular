@@ -1,7 +1,7 @@
-<p>rtrrudshfgdshfb</p>
 <ul>
   <li ng-repeat="product in $ctrl.products">
-    <span>{{product.name}}</span>
+    <h3><span>{{product.name}}</span></h3>
     <p>{{product.price}}</p>
+    <button ng-click="onClick(product.id);">Go to {{product.name}} page</button>
   </li>
 </ul>

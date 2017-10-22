@@ -25,7 +25,6 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
-  <div ng-view></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -36,9 +35,12 @@
   <script src="view2/view2.js"></script>
   <script src="product-list/product-list.module.js"></script>
   <script src="product-list/product-list.component.js"></script>
+  <script src="product-detail/product-detail.module.js"></script>
+  <script src="product-detail/product-detail.component.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
   <script src="app.js"></script>
 </body>
+<div ng-view></div>
 </html>

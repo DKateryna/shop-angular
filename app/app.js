@@ -5,6 +5,7 @@ angular.module('myApp', [
   'ngRoute',
   'productList',
   'myApp.view2',
+  'productDetail',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -13,6 +14,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
   $routeProvider
   .when('/products', {
     template: '<product-list></product-list>'
+  })
+  .when('/product/:productId', {
+    template: '<product-detail></product-detail>'
   })
   .when('/view2', {
     template: '<view2></view2>'
