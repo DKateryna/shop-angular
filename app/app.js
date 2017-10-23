@@ -26,12 +26,8 @@ factory('State', function() {
   ];
   return {
     cart: [],
-    getProduct: function(id) {
-      return products.find(product => id === product.id);
-    },
-    getProducts: function() {
-      return products;
-    }
+    getProduct: (id) => products.find(product => id === product.id),
+    getProducts: () => products
   };
 }).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

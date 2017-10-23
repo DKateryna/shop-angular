@@ -5,9 +5,7 @@ angular.
     controller: ['$routeParams', '$scope', 'State',
       function ProductDetailController($routeParams, $scope, State) {
         this.product = State.getProduct($routeParams.productId);
-        $scope.onClick = function (id) {
-          window.location = "#!/shoppingCart/add/" + id;
-        };
+        $scope.onClick = (id) => window.location = "#!/shoppingCart/add/" + id
       }
     ]
   });
