@@ -6,6 +6,7 @@ angular.module('myApp', [
   'productList',
   'shoppingCart',
   'productDetail',
+  'checkoutDetail',
   'myApp.version'
 ]).
 factory('State', function() {
@@ -45,6 +46,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     })
     .when('/shoppingCart/add/:productId', {
       template: '<shopping-cart></shopping-cart>'
+    })
+    .when('/checkoutDetail', {
+      template: '<checkout-detail></checkout-detail>'
     })
     .otherwise({
       redirectTo: '/products'

@@ -4,5 +4,6 @@ class ShoppingCart {
       State.cart.push(State.getProduct($routeParams.productId));
     }
     this.products = State.cart;
+    $scope.onClick = () => window.location = "#!/checkoutDetail";
   }
 }
