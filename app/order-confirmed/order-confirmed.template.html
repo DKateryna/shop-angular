@@ -1,0 +1,9 @@
+<h1>Thank you!</h1>
+<p>Dear {{customer}},</p>
+<p>Thank you for purchasing</p>
+<ul>
+  <li ng-repeat="product in $ctrl.products track by $index">
+    <p>{{product.name}}</p>
+  </li>
+</ul>
+<p>MAGAZYN</p>

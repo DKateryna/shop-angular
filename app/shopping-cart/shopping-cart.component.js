@@ -1,9 +1,9 @@
 class ShoppingCart {
   constructor ($routeParams, $scope, State) {
     if ($routeParams.productId) {
-      State.cart.push(State.getProduct($routeParams.productId));
+      State.addToCart(State.getProduct($routeParams.productId));
     }
-    this.products = State.cart;
+    this.products = State.getCart();
     $scope.onClick = () => window.location = "#!/checkoutDetail";
   }
 }

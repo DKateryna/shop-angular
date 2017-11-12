@@ -7,6 +7,7 @@ angular.module('myApp', [
   'shoppingCart',
   'productDetail',
   'checkoutDetail',
+  'orderConfirmed',
   'myApp.version'
 ]).
 factory('State', function() {
@@ -25,10 +26,21 @@ factory('State', function() {
       id: 'item_3'
     }
   ];
+  let customer = '';
+  let checkedOut = [];
+  let cart = [];
   return {
-    cart: [],
+    getCart: () => cart,
+    addToCart: (product) => cart.push(product),
     getProduct: (id) => products.find(product => id === product.id),
-    getProducts: () => products
+    getProducts: () => products,
+    checkOut: () => {
+      checkedOut = cart.slice();
+      cart = [];
+    },
+    getCheckedOut: () => checkedOut,
+    getCustomer: () => customer,
+    setCustomer: (name) => customer = name
   };
 }).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
@@ -49,6 +61,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
     })
     .when('/checkoutDetail', {
       template: '<checkout-detail></checkout-detail>'
+    })
+    .when('/orderConfirmed', {
+      template: '<order-confirmed></order-confirmed>'
     })
     .otherwise({
       redirectTo: '/products'

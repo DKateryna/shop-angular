@@ -1,5 +1,5 @@
 <form>
   <label>Full Name:
-    <input type="text" ng-model="user.name" ng-model-options="{ debounce: 250 }" /></label><br />
+    <input type="text" ng-model="user.name" /></label><br />
+    <input type="submit" ng-click="onClick(user)" value="Confirm" />
 </form>
-<button ng-click="onClick();">Confirm</button>
