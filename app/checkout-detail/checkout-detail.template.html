@@ -1,6 +1,6 @@
 <form name="form" class="css-form" novalidate>
   <label>Name:
-  <input type="text" ng-model="user.name" name="uName" required="" />
+  <input type="text" ng-model="user.name" name="uName" required />
 </label>
 
   <br />
@@ -9,7 +9,7 @@
   </div>
 
   <label>E-mail:
-  <input type="email" ng-model="user.email" name="uEmail" required="" />
+  <input type="email" ng-model="user.email" name="uEmail" required />
 </label>
 
   <br />
@@ -18,26 +18,23 @@
     <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
   </div>
 
-  <br /> Gender:
-  <label><input type="radio" ng-model="user.gender" value="male" />male</label>
-  <label><input type="radio" ng-model="user.gender" value="female" />female</label>
   <br />
 
   <div>
     <p>
       <label>Date of birth: </label>
-      <input type="date" id="birthday" ng-model="user.birthday" max="{{ $ctrl.now | date:'yyyy-MM-dd'}}"  />
+      <input type="date" id="birthday" ng-model="user.birthday" max="{{ $ctrl.now | date:'yyyy-MM-dd'}}" required />
     </p>
   </div>
 
   <div>
     <p>
       <label>Delivery date: </label>
-      <input type="date" id="date" ng-model="deliveryDate" min="{{ $ctrl.now | date:'yyyy-MM-dd'}}" />
+      <input type="date" id="date" ng-model="deliveryDate" min="{{ $ctrl.now | date:'yyyy-MM-dd'}}" required />
     </p>
 
   </div>
 
 
-  <input type="submit" ng-click="onClick(user, deliveryDate)" value="Confirm" />
+  <input type="submit" ng-click="onClick(user, deliveryDate)" value="Confirm" ng-disabled="form.$invalid" />
 </form>
