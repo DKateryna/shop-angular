@@ -26,15 +26,14 @@
   <div>
     <p>
       <label>Date of birth: </label>
-      <input type="date" id="date" ng-model="user.birthday" />
+      <input type="date" id="birthday" ng-model="user.birthday" max="{{ $ctrl.now | date:'yyyy-MM-dd'}}"  />
     </p>
-
   </div>
 
   <div>
     <p>
       <label>Delivery date: </label>
-      <input type="date" id="date" ng-model="deliveryDate" />
+      <input type="date" id="date" ng-model="deliveryDate" min="{{ $ctrl.now | date:'yyyy-MM-dd'}}" />
     </p>
 
   </div>
