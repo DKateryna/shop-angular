@@ -1,8 +1,15 @@
-<h1>Catalogue</h1>
-<ul>
-  <li ng-repeat="product in $ctrl.products">
-    <h3><span>{{product.name}}</span></h3>
-    <p>{{product.price}}</p>
-    <button ng-click="onClick(product.id);">Go to {{product.name}} page</button>
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <h1>Catalogue</h1>
+
+    <ul ng-repeat="product in $ctrl.products">
+      <div class="col-md-4">
+          <img src="http://placehold.it/350x150" />
+        <h3><span>{{product.name}}</span></h3>
+        <p>{{product.price}}</p>
+        <button ng-click="onClick(product.id);" class="btn btn-primary">Go to {{product.name}} page</button>
+
+      </div>
+    </ul>
+  </div>
+</div>

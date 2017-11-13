@@ -24,6 +24,14 @@ factory('State', function() {
       name: 'Item 3',
       price: 'Product price',
       id: 'item_3'
+    }, {
+      name: 'Item 4',
+      price: 'Product price',
+      id: 'item_4'
+    }, {
+      name: 'Item 5',
+      price: 'Product price',
+      id: 'item_5'
     }
   ];
   let customer = '';
